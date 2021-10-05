@@ -1,0 +1,34 @@
+@import 'fonts.css';
+
+.navbar-bg {
+    background-color: #E5E9FF !important;
+}
+
+.navbar-title {
+    text-align: left;
+    color: #064FBD;
+    font-size: 27px;
+    font-family: QuicksandBold, serif;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+.navbar-title a {
+    color: #064FBD;
+    text-decoration: none;
+    padding: 0 50px 0 50px
+}
+
+.navbar-content {
+    float: right;
+    margin: auto;
+    left: 50%;
+    font-size: 15px;
+    transform: translate(-50%);
+}
+
+.navbar-dark .navbar-nav .nav-link
+{
+    color: #064FBD;
+    padding: 0 25px 0 25px;
+}

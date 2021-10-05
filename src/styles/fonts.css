@@ -1,0 +1,15 @@
+/* quicksand-regular - latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/Quicksand-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'QuicksandBold';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../fonts/Quicksand-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
