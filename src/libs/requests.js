@@ -24,8 +24,8 @@ export const getStudents = () =>
 export const getStudent = (id) =>
     query('get', basepath + `students/${id}`)
 
-export const getcourses = () =>
+export const getCourses = () =>
     query('get', basepath + 'courses')
 
-export const getcourse = (id) =>
+export const getCourse = (id) =>
     query('get', basepath + `courses/${id}`)

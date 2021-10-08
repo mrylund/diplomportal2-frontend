@@ -1,6 +1,6 @@
 import React from "react"
 import { NavDropdown } from "react-bootstrap";
-import { getcourses } from "@libs/requests.js";
+import { getCourses } from "@libs/requests.js";
 
 // Creates a NavDropdown with course number and course title: <number> - <title>
 export class CourseDropdown extends React.Component {
@@ -13,8 +13,7 @@ export class CourseDropdown extends React.Component {
 
     componentDidMount() {
         const fetchCourses = async () => {
-            const response = await getcourses()
-            console.log(response.data)
+            const response = await getCourses()
             const courses = response.data
             this.setState({
                 courses

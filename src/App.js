@@ -1,17 +1,19 @@
 import './App.css';
 import { MyNavbar } from './Components/Navigationbar/Navbar';
 import { DataTextComponent } from './Components/DataText'
+import { ScheduleComponent } from './Components/Schedule';
+
 
 
 
 function App() {
-    console.log("hej")
 
     return (
         <div>
             <MyNavbar />
             <h1>Hej</h1>
             <DataTextComponent />
+            <ScheduleComponent></ScheduleComponent>
         </div>
     );
 }
