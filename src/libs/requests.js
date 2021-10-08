@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const basepath = "https://diplomportal2-backend.herokuapp.com/"
+console.log("Environment:", process.env.NODE_ENV);
+const basepath = process.env.NODE_ENV === 'development' ? "http://localhost:443/" : "https://diplomportal2-backend.herokuapp.com/"
 
 const parseResponseOrError = response => {
     return {
