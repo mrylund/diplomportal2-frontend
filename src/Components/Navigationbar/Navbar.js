@@ -4,6 +4,7 @@ import d_logo from '@images/d_logo.png'
 import { CourseDropdown } from './CourseDropdown'
 import { Navbar, Container, NavbarBrand, Nav } from 'react-bootstrap';
 import '../../styles/Navbar.css';
+import { Login } from './Login';
 
 export const MyNavbar = () => {
     return (
@@ -27,6 +28,7 @@ export const MyNavbar = () => {
                                 <Nav.Link  href="/">Home</Nav.Link>
                                 <Nav.Link href="#about">About</Nav.Link>
                                 <CourseDropdown />
+                                <Login />
                             </Nav>
                         </Navbar>
                     </Container>

@@ -7,7 +7,7 @@ export const ScheduleComponent = (props) => {
     const [student, setStudent] = useState()
 
     const fetchStudent = async () => {
-        const response = await getStudent('s152716')
+        const response = await getStudent('s185092')
         console.log("Har fetched", response.data)
         setStudent(response.data)
     }
@@ -43,7 +43,7 @@ export const ScheduleComponent = (props) => {
                     <h2>Skema</h2>
                     <div className="schedule-weekday">
                         {/* List weekdays the student has courses */}
-                        {student.schedule.map((d, id) => {
+                        {/* {student.schedule.map((d, id) => {
                                     return (
                                         <div key={id}>
                                             <h4>{weekDict[d.weekDay.substring(0,2)]}</h4>
@@ -52,7 +52,7 @@ export const ScheduleComponent = (props) => {
                                     ) 
                                 }    
                             )
-                        }
+                        } */}
                     </div>
                 </div>
             )}

@@ -21,7 +21,7 @@ export const CourseDropdown = (props) => {
 
     return (
         <NavDropdown title="Kurser">
-            {courses.map((course, index) => <NavDropdown.Item key={index}>{course.courseNumber} - {course.title}</NavDropdown.Item>)}
+            {courses.map((course, index) => <NavDropdown.Item key={index}>{course.coursenumber} - {course.title}</NavDropdown.Item>)}
         </NavDropdown>
     )
 }
