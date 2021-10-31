@@ -14,9 +14,9 @@ export const Login = () => {
     }
 
     return (
-        <Nav.Link onClick={handleClick}>Log In</Nav.Link>
-        // <Nav.Link href="https://auth.dtu.dk/dtu/?service=http://localhost:443/login">
-        //     Log In
-        // </Nav.Link>
+        //<Nav.Link onClick={handleClick}>Log In</Nav.Link>
+        <Nav.Link href="https://auth.dtu.dk/dtu/?service=http://localhost:443/login">
+            Log In
+        </Nav.Link>
     )
 }
