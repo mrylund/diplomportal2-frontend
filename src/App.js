@@ -11,7 +11,7 @@ function App() {
     return (
         <div>
             <MyNavbar />
-            <h1>Hej</h1>
+            <h1>Hejsa</h1>
             <DataTextComponent />
             <ScheduleComponent></ScheduleComponent>
         </div>
