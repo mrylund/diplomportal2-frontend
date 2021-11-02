@@ -1,34 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { NavDropdown } from "react-bootstrap";
-import { getcourses } from "@libs/requests.js";
+import { getCourses } from "@libs/requests.js";
 
 // Creates a NavDropdown with course number and course title: <number> - <title>
-export class CourseDropdown extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            courses: [],
-        };
+export const CourseDropdown = (props) => {
+    const [courses, setCourses] = useState([]);
+
+    // Get courses from backend and set the state
+    const fetchCourses = async () => {
+        const response = await getCourses()
+        const courses = response.data
+        setCourses(courses)
     }
 
-    componentDidMount() {
-        const fetchCourses = async () => {
-            const response = await getcourses()
-            console.log(response.data)
-            const courses = response.data
-            this.setState({
-                courses
-            })
-        }
-
+    // Fetch the courses only when the component is first mounted or updated.
+    // This is what the second parameter (empty array) means.
+    useEffect(() => {
         fetchCourses()
-    }
+    }, [])
 
-    render() {
-        return (
-            <NavDropdown title="Kurser">
-                {this.state.courses.map((course, index) => <NavDropdown.Item key={index}>{course.courseNumber} - {course.title}</NavDropdown.Item>)}
-            </NavDropdown>
-        )
-    }
+    return (
+        <NavDropdown title="Kurser">
+            {courses.map((course, index) => <NavDropdown.Item key={index}>{course.coursenumber} - {course.title}</NavDropdown.Item>)}
+        </NavDropdown>
+    )
 }

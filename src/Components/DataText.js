@@ -25,7 +25,7 @@ export class DataTextComponent extends React.Component {
         return (
             <div>
                 <h1>Students</h1>
-                <ul>{this.state.students.map((s, index) => <li key={index}>{s.name} - {s.studyNumber}</li>)}</ul>
+                <ul>{this.state.students.map((s, index) => <li key={index}>{s.name} - {s.studynumber}</li>)}</ul>
             </div>
         );
     }
