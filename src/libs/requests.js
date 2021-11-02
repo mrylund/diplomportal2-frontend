@@ -31,7 +31,7 @@ export const getCourse = (id) =>
     query('get', basepath + `courses/${id}`)
 
 export const logIn = () =>
-    query('get','https://auth.dtu.dk/dtu/?service=http://localhost:443/login')
+    query('get', basepath + 'login')
 
 export const logOut = () =>
     query('get', 'https://auth.dtu.dk/dtu/logout')
