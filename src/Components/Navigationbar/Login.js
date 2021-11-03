@@ -11,7 +11,7 @@ export const Login = () => {
 
     return (
         //<Nav.Link onClick={handleClick}>Log In</Nav.Link>
-        <Nav.Link href="https://auth.dtu.dk/dtu/?service=https://diplomportal2-backend.herokuapp.com/login">
+        <Nav.Link href="https://auth.dtu.dk/dtu/?service=https://ugle.devops.diplomportal.dk/login">
             Log In
         </Nav.Link>
     )
