@@ -1,8 +1,6 @@
 import { logIn } from "../../libs/requests"
 import { Nav } from 'react-bootstrap';
 
-
-
 export const Login = () => {
 
     const handleClick = async () => {
@@ -13,7 +11,7 @@ export const Login = () => {
 
     return (
         //<Nav.Link onClick={handleClick}>Log In</Nav.Link>
-        <Nav.Link href="https://auth.dtu.dk/dtu/?service=http://localhost:443/login">
+        <Nav.Link href="https://auth.dtu.dk/dtu/?service=https://diplomportal2-backend.herokuapp.com/login">
             Log In
         </Nav.Link>
     )
