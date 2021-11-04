@@ -4,10 +4,9 @@ import { DataTextComponent } from './Components/DataText'
 import { ScheduleComponent } from './Components/Schedule';
 
 
-
-
 function App() {
 
+    console.log(process.env);
     return (
         <div>
             <MyNavbar />
