@@ -9,9 +9,10 @@ export const Login = () => {
         console.log("frontend:", response)
     }
 
+
     return (
         //<Nav.Link onClick={handleClick}>Log In</Nav.Link>
-        <Nav.Link href="https://auth.dtu.dk/dtu/?service=https://ugle.devops.diplomportal.dk/login">
+        <Nav.Link href={"https://auth.dtu.dk/dtu/?service=" + process.env.REACT_APP_BACKEND_URL + "login"}>
             Log In
         </Nav.Link>
     )

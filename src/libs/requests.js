@@ -1,7 +1,9 @@
 import axios from 'axios'
 
 console.log("Environment:", process.env.NODE_ENV);
-const basepath = process.env.NODE_ENV === 'development' ? "http://localhost:443/" : "https://backend.ugle.devops.diplomportal.dk/"
+console.log('TEST MERE: ' + process.env.BACKEND_URL);
+
+const basepath = process.env.REACT_APP_BACKEND_URL;
 
 const parseResponseOrError = response => {
     return {
