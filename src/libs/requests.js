@@ -23,8 +23,11 @@ const query = async (method, query, data = {}) =>
 export const getStudents = () =>
     query('get', basepath + 'students')
 
-export const getStudent = (id) =>
-    query('get', basepath + `students/${id}`)
+export const getStudent = (id) => {
+    console.log("hej", id)
+    return query('get', basepath + `students/${id}`)
+}
+    
 
 export const getCourses = () =>
     query('get', basepath + 'courses')
