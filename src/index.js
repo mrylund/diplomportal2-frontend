@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Switch, Route } from 'react-router-dom'
+import { Course } from './Components/Course';
 
 // Taken from https://github.com/diplomit-dtu/diplomPortal/blob/master/src/index.js
 const token = getParameterByName("token");
@@ -19,6 +20,7 @@ ReactDOM.render(
     <HashRouter>
       <Switch>
         <Route exact path={'/'} component={App} />
+        <Route exact path={'/course/:id'} component={Course} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
 
