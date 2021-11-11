@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Course } from './Components/Course';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import { NavBar } from './Components/Navigationbar/Navbar';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <NavBar/>
       <Switch>
         <Route exact path={'/'} component={App} />
+        <Route exact path={'/course/:id'} component={Course} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
 

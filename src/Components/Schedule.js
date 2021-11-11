@@ -10,6 +10,7 @@ export const ScheduleComponent = (props) => {
         const response = await getStudent('s185092')
         console.log("Har fetched", response.data)
         setStudent(response.data)
+        console.log("student", student)
     }
     useEffect(() => {
         fetchStudent();
