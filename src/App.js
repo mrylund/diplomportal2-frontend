@@ -1,7 +1,8 @@
 import './App.css';
-import { MyNavbar } from './Components/Navigationbar/Navbar';
+import { NavBar } from './Components/Navigationbar/Navbar';
 import { DataTextComponent } from './Components/DataText'
 import { ScheduleComponent } from './Components/Schedule';
+import React from "react";
 
 
 function App() {
@@ -9,7 +10,6 @@ function App() {
     console.log(process.env);
     return (
         <div>
-            <MyNavbar />
             <h1>Hejsa</h1>
             <DataTextComponent />
             <ScheduleComponent></ScheduleComponent>
