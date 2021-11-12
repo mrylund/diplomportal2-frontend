@@ -1,0 +1,38 @@
+h2 {
+    color: #064FBD;
+}
+
+
+.table-custom {
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .table-custom {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .table-custom {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+/* For halv sized windows */
+@media (max-width: 1200px) {
+    .table-custom {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .table-custom {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+}

@@ -23,8 +23,23 @@ const query = async (method, query, data = {}) =>
 export const getStudents = () =>
     query('get', basepath + 'students')
 
-export const getStudent = (id) =>
-    query('get', basepath + `students/${id}`)
+export const getStudent = (id) => {
+    return query('get', basepath + `students/${id}`)
+}
+    
+export const verifyUser = (token) => {
+    const data = {
+        authorization: token
+    }
+    return query('post', basepath + 'student/authenticate', data)
+}
+
+export const getCurrentUser = (token) => {
+    const data = {
+        authorization: token
+    }
+    return query('post', basepath + 'student/current', data)
+}
 
 export const createStudent = (student) =>
     query('post', basepath + 'students', student)
