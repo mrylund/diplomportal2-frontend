@@ -41,6 +41,14 @@ export const getCurrentUser = (token) => {
     return query('post', basepath + 'student/current', data)
 }
 
+export const updateCurrentUserName = (name, token) => {
+    const data = {
+        authorization: token,
+        name: name
+    }
+    return query('put', basepath + 'students/current/name', data)
+}
+
 export const getCourses = () =>
     query('get', basepath + 'courses')
 
