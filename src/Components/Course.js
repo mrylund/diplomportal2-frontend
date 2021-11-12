@@ -9,31 +9,31 @@ export const Course = (props) => {
     const [course, setCourse] = useState({})
     const [loaded, setLoaded] = useState(false)
 
-    const courseId = props.match.params.id
-    
-    const fetchCourse = async () => {
-        const response = await getCourse(courseId);
-        const course = response.data;
-        setCourse(course)
-
-        const parser = new PublicGoogleSheetsParser(course.sheets)
-        parser.parse().then((items) => {
-            setData(items)
-            setLoaded(true)
-        })
-    };
-
     useEffect(() => {
-        fetchCourse();
-    }, [])
+        const courseId = props.match.params.id
 
-    console.log("data",data)
-    console.log("course:", course)
+        const fetchCourse = async () => {
+            const response = await getCourse(courseId);
+            const course = response.data;
+            setCourse(course)
+    
+            const parser = new PublicGoogleSheetsParser(course.sheets)
+            parser.parse().then((items) => {
+                setData(items)
+                setLoaded(true)
+            })
+        };
+
+        fetchCourse();
+    }, [props.match.params.id]) // update everytime the id in the url changes
+
+    // console.log("data",data)
+    // console.log("course:", course)
     
     return (
         !loaded
         ? <div>Loading...</div>
-        : data.length == 0 
+        : data.length === 0 
 
         ? <div>Google Sheet ikke tilgængeligt.</div>
         : <div className="table-custom">
@@ -71,7 +71,7 @@ export const Course = (props) => {
 export const Lesson = (props) => {
     var _time = props.time ? new Date(props.time.substring(5, props.time.length-1)).toLocaleDateString('en-AU') : ''
     return (
-        <tr scope="row">
+        <tr>
             <td>{props.lesson}</td>
             <td>{props.topic}</td>
             <td>{_time}</td>

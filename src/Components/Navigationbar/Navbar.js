@@ -35,10 +35,13 @@ export const NavBar = () => {
                     <NavLink to='/about'>
                         Om
                     </NavLink>
+                    <NavLink to='/profile'>
+                        Profil
+                    </NavLink>
                     <CourseDropdown/>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to='/signin'>Log ind</NavBtnLink>
+                    <NavBtnLink to="/signin">Log ind</NavBtnLink>
                 </NavBtn>
             </Nav>
         </>
