@@ -23,7 +23,7 @@ export const NavBar = () => {
                     <img
                         alt=""
                         src={d_logo}
-                        height="150"
+                        height="75"
                         className="align-top"
                     />
                 </NavLogo>
