@@ -1,41 +1,46 @@
-import * as React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from 'react';
+import {
+    Nav,
+    NavLogo,
+    Bars,
+    NavLink,
+    NavLinkTitle,
+    NavMenu,
+    NavBtn,
+    NavBtnLink
+} from './NavbarElements';
 import d_logo from '@images/d_logo.png'
 import { CourseDropdown } from './CourseDropdown'
-import { Navbar, Container, NavbarBrand, Nav } from 'react-bootstrap';
 import '../../styles/Navbar.css';
 import { Login } from './Login';
+import 'bootstrap/dist/css/bootstrap.css';
 
-export const MyNavbar = () => {
+export const NavBar = () => {
     return (
-        <div>
-            <Navbar className="navbar-bg" variant="dark">
-                <Container>
-                    <NavbarBrand href="/">
-                        <img
-                            alt=""
-                            src={d_logo}
-                            height="150"
-
-                            className="align-top"
-                        />
-                    </NavbarBrand>
-                    <div className="navbar-title"> <a href="/"> Diplomportal 2.0 </a> </div>
-
-                    <Container>
-                        <Navbar id="basic-navbar-nav">
-                            <Nav className="me-auto navbar-content">
-                                <Nav.Link  href="/">Home</Nav.Link>
-                                <Nav.Link href="#about">About</Nav.Link>
-                                <CourseDropdown />
-                                <Login />
-                            </Nav>
-                        </Navbar>
-                    </Container>
-
-                </Container>
-
-            </Navbar>
-        </div>
-    )
-}
+        <>
+            <Nav>
+                <NavLogo to='/'>
+                    <img
+                        alt=""
+                        src={d_logo}
+                        height="150"
+                        className="align-top"
+                    />
+                </NavLogo>
+                <NavLinkTitle to='/'>
+                    Diplomportal 2.0
+                </NavLinkTitle>
+                <Bars/>
+                <NavMenu>
+                    <NavLink to='/about'>
+                        Om
+                    </NavLink>
+                    <CourseDropdown/>
+                </NavMenu>
+                <NavBtn>
+                    <NavBtnLink to='/signin'>Log ind</NavBtnLink>
+                </NavBtn>
+            </Nav>
+        </>
+    );
+};
