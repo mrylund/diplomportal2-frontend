@@ -1,15 +1,32 @@
 import './App.css';
-import { NavBar } from './Components/Navigationbar/Navbar';
 import { DataTextComponent } from './Components/DataText'
 import { ScheduleComponent } from './Components/Schedule';
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { verifyUser } from './libs/requests';
 
-
-function App() {
+const App = () => {
 
     console.log(process.env);
+    const [isAuthorized, setIsAuthorized] = useState(false)
+
+    useEffect(() => {
+        const checkUserAuth = async () => {
+            const token = window.localStorage.getItem('portal-jwt-Token')
+            console.log('token', token)
+            const isAuthorized = await verifyUser(token)
+            console.log('isauth', isAuthorized)
+            setIsAuthorized(isAuthorized.success)
+        }
+
+        checkUserAuth()
+    }, [])
+
+    console.log('auth', isAuthorized)
+
     return (
-        <div>
+        !isAuthorized
+        ? <div>Ingen adgang</div>
+        : <div>
             <h1>Hejsa</h1>
             <DataTextComponent />
             <ScheduleComponent></ScheduleComponent>

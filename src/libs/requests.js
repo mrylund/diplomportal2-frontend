@@ -28,6 +28,12 @@ export const getStudent = (id) => {
     return query('get', basepath + `students/${id}`)
 }
     
+export const verifyUser = (token) => {
+    const data = {
+        headers: { Authorization: `Bearer ${token}` }
+    }
+    return query('post', basepath + 'authenticateuser', data)
+}
 
 export const getCourses = () =>
     query('get', basepath + 'courses')
