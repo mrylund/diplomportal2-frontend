@@ -1,5 +1,5 @@
 import './App.css';
-import { DataTextComponent } from './Components/DataText'
+import { HomePage } from './Components/HomePage'
 import { ScheduleComponent } from './Components/Schedule';
 import React, { useEffect, useState } from "react";
 import { verifyUser } from './libs/requests';
@@ -27,8 +27,7 @@ const App = () => {
         !isAuthorized
         ? <div>Ingen adgang</div>
         : <div>
-            <h1>Hejsa</h1>
-            <DataTextComponent />
+            <HomePage />
             <ScheduleComponent></ScheduleComponent>
         </div>
     );
