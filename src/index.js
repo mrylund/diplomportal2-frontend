@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { Course } from './Components/Course';
+import { HashRouter, Switch, Route } from 'react-router-dom';
+import { NavBar } from './Components/Navigationbar/Navbar';
+import { Login } from './Components/Navigationbar/Login';
 
 // Taken from https://github.com/diplomit-dtu/diplomPortal/blob/master/src/index.js
 const token = getParameterByName("token");
@@ -17,8 +20,11 @@ if (token!=null && token.length>0){
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
+      <NavBar/>
       <Switch>
         <Route exact path={'/'} component={App} />
+        <Route path={'/course/:id'} component={Course} />
+        <Route exact path={'/signin'} component={Login} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
 

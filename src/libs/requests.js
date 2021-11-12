@@ -24,10 +24,22 @@ export const getStudents = () =>
     query('get', basepath + 'students')
 
 export const getStudent = (id) => {
-    console.log("hej", id)
     return query('get', basepath + `students/${id}`)
 }
     
+export const verifyUser = (token) => {
+    const data = {
+        authorization: token
+    }
+    return query('post', basepath + 'student/authenticate', data)
+}
+
+export const getCurrentUser = (token) => {
+    const data = {
+        authorization: token
+    }
+    return query('post', basepath + 'student/current', data)
+}
 
 export const getCourses = () =>
     query('get', basepath + 'courses')
