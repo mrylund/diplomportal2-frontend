@@ -10,7 +10,6 @@ import { Login } from './Components/Navigationbar/Login';
 
 // Taken from https://github.com/diplomit-dtu/diplomPortal/blob/master/src/index.js
 const token = getParameterByName("token");
-console.log(token);
 if (token!=null && token.length>0){
     //Store token and redirect to baseURL
     localStorage.setItem("portal-jwt-Token", token);

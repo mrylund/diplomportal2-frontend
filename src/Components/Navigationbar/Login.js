@@ -4,9 +4,7 @@ import { Nav } from 'react-bootstrap';
 export const Login = () => {
 
     const handleClick = async () => {
-        console.log("logger ind")
         const response = await logIn()
-        console.log("frontend:", response)
     }
 
 

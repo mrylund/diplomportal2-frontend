@@ -27,8 +27,6 @@ export const Course = (props) => {
         fetchCourse();
     }, [props.match.params.id]) // update everytime the id in the url changes
 
-    // console.log("data",data)
-    // console.log("course:", course)
     
     return (
         !loaded

@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-console.log("Environment:", process.env.NODE_ENV);
-console.log('TEST MERE: ' + process.env.BACKEND_URL);
 
 const basepath = process.env.REACT_APP_BACKEND_URL;
 

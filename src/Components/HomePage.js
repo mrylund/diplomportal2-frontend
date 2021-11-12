@@ -10,7 +10,6 @@ export const HomePage = () => {
         const fetchCurStudent = async () => {
             const response = await getCurrentUser(window.localStorage.getItem('portal-jwt-Token'));
             const curUser = response.data;
-            console.log("front curuser",curUser)
             setCurStudent(curUser)
             setLoaded(true)
         };
@@ -18,7 +17,6 @@ export const HomePage = () => {
         fetchCurStudent()
     }, [])
     
-    console.log("react er dræb", curStudent)
 
     return (
         // While the page load
