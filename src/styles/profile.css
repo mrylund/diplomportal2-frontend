@@ -1,0 +1,23 @@
+
+
+.input-custom {
+    padding-top: 10px;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+@media (max-width: 1200px) {
+    .input-custom {
+        padding-top: 10px;
+        padding-right: 20%;
+        padding-left: 20%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .input-custom {
+        padding-top: 10px;
+        padding-right: 30%;
+        padding-left: 30%;
+    }
+}
