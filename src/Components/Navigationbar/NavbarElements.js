@@ -16,7 +16,7 @@ export const NavLink = styled(Link)`
   display: flex;
   text-decoration: none;
   padding: 0;
-  margin: 150px;
+  margin: 50px;
   cursor: pointer;
  &:hover {
    text-decoration: underline;
