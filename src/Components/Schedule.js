@@ -9,7 +9,6 @@ export const ScheduleComponent = (props) => {
 
     const fetchStudent = async () => {
         const response = await getStudent('s152716')
-        console.log('har hentet en studerende', response)
         setStudent(response.data)
         setLoaded(true)
     }
@@ -17,7 +16,6 @@ export const ScheduleComponent = (props) => {
         fetchStudent();
     }, [])
 
-    console.log("student", student)
 
     // const weekDict = {
     //     'mo': 'Mandag',
@@ -48,7 +46,12 @@ export const ScheduleComponent = (props) => {
                     <div className="schedule-weekday">
                         {/* List weekdays the student has courses */}
                         { student.schedule.map((day, index) => {
-                            return <ScheduleContent key={index} day={Object.keys(day)} />
+                            return <ScheduleContent
+                            key={index}
+                            weekdayName={day.weekdayName}
+                            weekdayTime={day.weekdayTime}
+                            courseName={day.courseName}
+                            />
                             }) }
                     </div>
                 </div>
