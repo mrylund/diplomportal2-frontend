@@ -7,7 +7,9 @@ export const ScheduleContent = (props) => {
                 <h2>{props.weekdayName}</h2>
             </div>
             <div>
-                <h4>{props.weekdayTime + ' ' + props.courseName}</h4>
+                {props.courses.map((course, id) => {
+                    return <h4 key={id}>{course.timeSlot + ' ' + course.title}</h4>
+                })}
             </div>
         </div>
     )

@@ -49,8 +49,7 @@ export const ScheduleComponent = (props) => {
                             return <ScheduleContent
                             key={index}
                             weekdayName={day.weekdayName}
-                            weekdayTime={day.weekdayTime}
-                            courseName={day.courseName}
+                            courses={day.courses}
                             />
                             }) }
                     </div>

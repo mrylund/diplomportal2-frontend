@@ -14,8 +14,12 @@ import { CourseDropdown } from './CourseDropdown'
 import '../../styles/Navbar.css';
 import { Login } from './Login';
 import 'bootstrap/dist/css/bootstrap.css';
+import { getCurrentUser } from '../../libs/requests';
 
 export const NavBar = () => {
+
+    //const isCurrentUserAdmin = getCurrentUser(window.localStorage[])
+
     return (
         <>
             <Nav>
