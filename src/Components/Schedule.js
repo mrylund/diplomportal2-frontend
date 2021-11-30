@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { getCurrentUser, getStudent } from "../libs/requests"
-import { getTokenFromClien } from "../utils"
 import { ScheduleContent } from "./ScheduleContent"
 
 export const ScheduleComponent = (props) => {

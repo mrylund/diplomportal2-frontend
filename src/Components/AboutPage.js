@@ -6,7 +6,7 @@ export const AboutPage = () => {
 
     return (
         <div>
-            <p class="text-center mt-5">Jeg er en about page</p>
+            <p className="text-center mt-5">Jeg er en about page</p>
         </div>
     )
 
