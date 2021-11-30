@@ -9,7 +9,6 @@ export const ProfilePage = () => {
     const [isUpdated, setIsUpdated] = useState(false)
 
     const handleClick = async () => {
-        console.log("navn er", inputName)
         const response = await updateCurrentUserName(inputName, window.localStorage.getItem('portal-jwt-Token'));
         console.log(response.data)
         if (!!response.data) setIsUpdated(true)

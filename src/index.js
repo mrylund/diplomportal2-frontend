@@ -8,6 +8,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import { NavBar } from './Components/Navigationbar/Navbar';
 import { Login } from './Components/Navigationbar/Login';
 import { ProfilePage } from './Components/ProfilePage';
+import { AboutPage } from './Components/AboutPage';
 
 // Taken from https://github.com/diplomit-dtu/diplomPortal/blob/master/src/index.js
 const token = getParameterByName("token");
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route path={'/course/:id'} component={Course} />
         <Route exact path={'/signin'} component={Login} />
         <Route exact path={'/profile'} component={ProfilePage} />
+        <Route exact path={'/about'} component={AboutPage} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
 
