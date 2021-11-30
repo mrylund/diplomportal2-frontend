@@ -17,7 +17,7 @@ export const Course = (props) => {
             const course = response.data;
             setCourse(course)
     
-            const parser = new PublicGoogleSheetsParser(course.sheets)
+            const parser = new PublicGoogleSheetsParser(course.sheetsId)
             parser.parse().then((items) => {
                 setData(items)
                 setLoaded(true)
