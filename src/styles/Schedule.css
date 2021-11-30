@@ -1,0 +1,8 @@
+
+.big-text-schedule {
+    color: gray !important;
+    font-size: 1.5em !important;
+    border-bottom: gray solid 0.5px;
+    display: inline-block;
+    padding: 5px !important;
+}
