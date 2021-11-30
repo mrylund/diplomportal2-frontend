@@ -15,16 +15,20 @@ import '../../styles/Navbar.css';
 import { Login } from './Login';
 import 'bootstrap/dist/css/bootstrap.css';
 import { getCurrentUser } from '../../libs/requests';
-import { getTokenFromClient } from '../../utils';
+import { getTokenFromClient, isUserAuthorized } from '../../utils';
 
 export const NavBar = () => {
 
     const [loggedIn, setLoggedIn] = useState(false)
 
     useEffect(() => {
-        const isLoggedIn = !!getTokenFromClient()
-        setLoggedIn(isLoggedIn)
-    })
+        const checkUserLoggedIn = async () => {
+            const isAuth = await isUserAuthorized()
+            setLoggedIn(isAuth)
+        }
+
+        checkUserLoggedIn()
+    }, [])
 
     //const isCurrentUserAdmin = getCurrentUser(window.localStorage[])
 

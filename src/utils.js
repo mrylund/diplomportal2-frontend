@@ -1,3 +1,4 @@
+import { verifyUser } from "./libs/requests";
 
 
 export const getTokenFromClient = () => {
@@ -10,4 +11,17 @@ export const setTokenForClient = (token) => {
 
 export const deleteTokenFromClient = () => {
     localStorage.removeItem("portal-jwt-Token");
+}
+
+export const isUserAuthorized = async () => {
+    const token = getTokenFromClient()
+    // Return false for no token
+    if (!token) {
+        return false
+    // Check to see if the token is still valid
+    } else {
+        const isAuthorized = await verifyUser(token)
+        return isAuthorized.success
+    }
+
 }
