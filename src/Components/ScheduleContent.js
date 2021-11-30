@@ -9,7 +9,7 @@ export const ScheduleContent = (props) => {
             </div>
             <div>
                 {props.courses.map((course, id) => {
-                    return <CourseTimeAndName course={course} key={id} />
+                    return <CourseTimeAndName key={id} course={course} />
                 })}
             </div>
         </div>

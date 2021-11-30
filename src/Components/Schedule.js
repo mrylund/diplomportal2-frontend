@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { getStudent } from "../libs/requests"
+import { getCurrentUser, getStudent } from "../libs/requests"
+import { getTokenFromClien } from "../utils"
 import { ScheduleContent } from "./ScheduleContent"
 import '../styles/Schedule.css'
 
@@ -9,31 +10,13 @@ export const ScheduleComponent = (props) => {
     const [loaded, setLoaded] = useState(false)
 
     const fetchStudent = async () => {
-        const response = await getStudent('s152716')
+        const response = await getCurrentUser()
         setStudent(response.data)
         setLoaded(true)
     }
     useEffect(() => {
         fetchStudent();
     }, [])
-
-
-    // const weekDict = {
-    //     'mo': 'Mandag',
-    //     'ti': 'Tirsdag',
-    //     'on': 'Onsdag',
-    //     'to': 'Torsdag',
-    //     'fr': 'Fredag'
-    // }
-
-    // const timeDict = {
-    //     // '0': {'start': '08:00', 'end': '12:00'},
-    //     // '1': {'start': '13:00', 'end': '17:00'},
-    //     // '2': {'start': '18:00', 'end': '22:00'}
-    //     '0': '08:00-12:00',
-    //     '1': '13:00-17:00',
-    //     '2': '18:00-22:00',
-    // }
 
     return (
         <div>

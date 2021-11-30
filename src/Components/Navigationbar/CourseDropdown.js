@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { NavDropdown } from "react-bootstrap";
 import { getCourses } from "@libs/requests.js";
+import { getCurrentUser } from "../../libs/requests";
 
 // Creates a NavDropdown with course number and course title: <number> - <title>
 export const CourseDropdown = (props) => {
@@ -8,8 +9,9 @@ export const CourseDropdown = (props) => {
 
     // Get courses from backend and set the state
     const fetchCourses = async () => {
-        const response = await getCourses()
-        const courses = response.data
+        // Current user holds an array of courses for the logged in user
+        const response = await getCurrentUser()
+        const courses = response.data.courses
         setCourses(courses)
     }
 
