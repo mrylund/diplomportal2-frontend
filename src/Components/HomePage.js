@@ -17,6 +17,7 @@ export const HomePage = () => {
         fetchCurStudent()
     }, [])
     
+
     return (
         // While the page load
         !loaded
