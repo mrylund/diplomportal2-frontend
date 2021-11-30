@@ -1,6 +1,6 @@
 
 
-export const getTokenFromClien = () => {
+export const getTokenFromClient = () => {
     return window.localStorage.getItem('portal-jwt-Token')
 }
 

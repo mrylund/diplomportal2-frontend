@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { updateCurrentUserName } from "../libs/requests";
 import '../styles/profile.css'
-import { getTokenFromClien } from "../utils";
+import { getTokenFromClient } from "../utils";
 
 
 export const ProfilePage = () => {
@@ -10,7 +10,7 @@ export const ProfilePage = () => {
     const [isUpdated, setIsUpdated] = useState(false)
 
     const handleClick = async () => {
-        const response = await updateCurrentUserName(inputName, getTokenFromClien());
+        const response = await updateCurrentUserName(inputName, getTokenFromClient());
         console.log(response.data)
         if (!!response.data) setIsUpdated(true)
     }

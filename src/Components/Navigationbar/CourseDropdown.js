@@ -14,7 +14,7 @@ export const CourseDropdown = (props) => {
         const courses = response.data.courses
         setCourses(courses)
     }
-
+    console.log('hej', courses)
     // Fetch the courses only when the component is first mounted or updated.
     // This is what the second parameter (empty array) means.
     useEffect(() => {

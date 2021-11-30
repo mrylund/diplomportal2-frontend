@@ -3,7 +3,7 @@ import { HomePage } from './Components/HomePage'
 import { ScheduleComponent } from './Components/Schedule';
 import React, { useEffect, useState } from "react";
 import { verifyUser } from './libs/requests';
-import { getTokenFromClien } from './utils';
+import { getTokenFromClient } from './utils';
 
 const App = () => {
 
@@ -11,7 +11,7 @@ const App = () => {
 
     useEffect(() => {
         const checkUserAuth = async () => {
-            const token = getTokenFromClien()
+            const token = getTokenFromClient()
             const isAuthorized = await verifyUser(token)
             setIsAuthorized(isAuthorized.success)
         }

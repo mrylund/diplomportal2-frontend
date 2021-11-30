@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getCurrentUser } from "../libs/requests"
-import { getTokenFromClien } from "../utils"
+import { getTokenFromClient } from "../utils"
 
 export const HomePage = () => {
     
