@@ -41,8 +41,8 @@ export const ScheduleComponent = (props) => {
                 <p>Loading...</p>
             ) : 
             (
-                <div className="schedule-box">
-                    <h2>Skema</h2>
+                <div className="schedule-box p-3">
+                    <h2 class="pb-2">Skema</h2>
                     <div className="schedule-weekday">
                         {/* List weekdays the student has courses */}
                         { student.schedule.map((day, index) => {

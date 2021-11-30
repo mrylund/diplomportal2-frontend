@@ -12,4 +12,12 @@ module.exports = {
   webpack: {
     alias: resolvedAliases,
   },
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
 };

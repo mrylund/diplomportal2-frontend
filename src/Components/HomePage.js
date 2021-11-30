@@ -26,10 +26,10 @@ export const HomePage = () => {
         // Show the name for the student
         : curStudent 
         ? 
-        <div>
-            <h2>Hej {curStudent.name || curStudent.studynumber}</h2>
+        <div class="p-3">
+            <h2>Velkommen tilbage, {curStudent.name || curStudent.studynumber}</h2>
         </div>
-        : <div>Fejl</div> 
+        : <div class="p-3">Fejl</div> 
         
     );
     
