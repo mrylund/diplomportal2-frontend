@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { NavDropdown } from "react-bootstrap";
 import { getCourses } from "@libs/requests.js";
-import { getCurrentUser } from "../../libs/requests";
+import { getCurrentUser, getStudent } from "../../libs/requests";
 
 // Creates a NavDropdown with course number and course title: <number> - <title>
 export const CourseDropdown = (props) => {
@@ -11,8 +11,11 @@ export const CourseDropdown = (props) => {
     const fetchCourses = async () => {
         // Current user holds an array of courses for the logged in user
         const response = await getCurrentUser()
-        const courses = response.data.courses
-        setCourses(courses)
+        // If the user is not logged in there is no response
+        if (!response) {
+            const courses = response.data.courses
+            setCourses(courses)
+        }
     }
     console.log('hej', courses)
     // Fetch the courses only when the component is first mounted or updated.

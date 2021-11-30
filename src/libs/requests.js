@@ -34,6 +34,8 @@ export const verifyUser = (token) => {
 }
 
 export const getCurrentUser = () => {
+    const token = getTokenFromClient()
+    
     const data = {
         authorization: getTokenFromClient()
     }

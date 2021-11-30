@@ -16,14 +16,14 @@ export const ProfilePage = () => {
     }
 
     return (
-        <div class="input-custom">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Navn til visning:</span>
+        <div className="input-custom">
+            <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                    <span className="input-group-text" id="inputGroup-sizing-default">Navn til visning:</span>
                 </div>
-                <input type="text" onChange={e => setInputName(e.target.value)} name="name" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
-                <div class="input-group-append">
-                    <button onClick={handleClick} class="btn btn-outline-secondary" type="button">Opdatér</button>
+                <input type="text" onChange={e => setInputName(e.target.value)} name="name" className="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
+                <div className="input-group-append">
+                    <button onClick={handleClick} className="btn btn-outline-secondary" type="button">Opdatér</button>
                 </div>
             </div>
             {

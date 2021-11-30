@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Nav,
     NavLogo,
@@ -15,8 +15,16 @@ import '../../styles/Navbar.css';
 import { Login } from './Login';
 import 'bootstrap/dist/css/bootstrap.css';
 import { getCurrentUser } from '../../libs/requests';
+import { getTokenFromClient } from '../../utils';
 
 export const NavBar = () => {
+
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    useEffect(() => {
+        const isLoggedIn = !!getTokenFromClient()
+        setLoggedIn(isLoggedIn)
+    })
 
     //const isCurrentUserAdmin = getCurrentUser(window.localStorage[])
 
@@ -45,7 +53,11 @@ export const NavBar = () => {
                     <CourseDropdown/>
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/signin">Log ind</NavBtnLink>
+                    {loggedIn
+                    ? <NavBtnLink to="/signin">Log ud</NavBtnLink>
+                    : <NavBtnLink to="/signin">Log ind</NavBtnLink>
+                    }
+                    {/* <NavBtnLink to="/signin">Log ind</NavBtnLink> */}
                 </NavBtn>
             </Nav>
         </>
