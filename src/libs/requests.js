@@ -33,9 +33,7 @@ export const verifyUser = (token) => {
     return query('post', basepath + 'student/authenticate', data)
 }
 
-export const getCurrentUser = () => {
-    const token = getTokenFromClient()
-    
+export const getCurrentUser = () => {    
     const data = {
         authorization: getTokenFromClient()
     }

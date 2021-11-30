@@ -1,7 +1,5 @@
-import { logIn } from "../../libs/requests"
-import { Nav } from 'react-bootstrap';
 import { useEffect, useState } from "react";
-import { deleteTokenFromClient, getTokenFromClient, isUserAuthorized } from "../../utils";
+import { deleteTokenFromClient, isUserAuthorized } from "../../utils";
 
 export const Login = () => {
 
@@ -12,9 +10,11 @@ export const Login = () => {
             const isAuth = await isUserAuthorized()
             setIsAuthorized(isAuth)
 
+            // If the user is already logged in - log them out
             if (isAuth) {
                 deleteTokenFromClient()
                 window.location.href="/"
+            // Else we log them in
             } else {
                 window.location.href="https://auth.dtu.dk/dtu/?service=" + process.env.REACT_APP_BACKEND_URL + "login"
             }
@@ -22,26 +22,6 @@ export const Login = () => {
 
         checkUserAuth()
     }, [])
-
-
-    // const [loaded, setLoaded] = useState(false)
-    // const [loggedin, setLoggedin] = useState(false)
-
-    // useEffect(() => {
-    //     const isLoggedIn = !!getTokenFromClient()
-    //     setLoggedin(isLoggedIn)
-    //     if (!isLoggedIn) {
-    //         window.location.href="https://auth.dtu.dk/dtu/?service=" + process.env.REACT_APP_BACKEND_URL + "login"
-    //     } else {
-            
-    //     }
-    //     setLoaded(true)
-    // },[])
-
-    const handleClick = async () => {
-        const response = await logIn()
-    }
-
 
     return (
         isAuthorized

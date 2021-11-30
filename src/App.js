@@ -12,7 +12,6 @@ const App = () => {
     useEffect(() => {
         const checkUserAuth = async () => {
             const token = getTokenFromClient()
-            console.log("token er", token)
             if (!!token) {
                 const isAuthorized = await verifyUser(token)
                 setIsAuthorized(isAuthorized.success)

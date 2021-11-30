@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { getCurrentUser, getStudent } from "../libs/requests"
-import { getTokenFromClient } from "../utils"
 import { ScheduleContent } from "./ScheduleContent"
 import '../styles/Schedule.css'
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { updateCurrentUserName } from "../libs/requests";
 import '../styles/profile.css'
 import { getTokenFromClient } from "../utils";
@@ -8,11 +8,12 @@ export const ProfilePage = () => {
 
     const [inputName, setInputName] = useState('')
     const [isUpdated, setIsUpdated] = useState(false)
+    const [isError, setIsError] = useState(false)
 
     const handleClick = async () => {
         const response = await updateCurrentUserName(inputName, getTokenFromClient());
-        console.log(response.data)
-        if (!!response.data) setIsUpdated(true)
+        setIsError(!response.success)
+        if (!!response.data && response.success) setIsUpdated(true)
     }
 
     return (
@@ -29,7 +30,9 @@ export const ProfilePage = () => {
             {
                 isUpdated
                 ? <p>Dit navn er opdateret.</p>
-                : <p></p>
+                : isError
+                ? <p style={{color:"red"}}>Navn blev ikke opdateret. Prøv igen.</p>
+                : <></>
             }
         </div>
     )
