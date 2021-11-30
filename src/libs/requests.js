@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getTokenFromClien } from '../utils';
 
 
 const basepath = process.env.REACT_APP_BACKEND_URL;
@@ -32,9 +33,9 @@ export const verifyUser = (token) => {
     return query('post', basepath + 'student/authenticate', data)
 }
 
-export const getCurrentUser = (token) => {
+export const getCurrentUser = () => {
     const data = {
-        authorization: token
+        authorization: getTokenFromClien()
     }
     return query('post', basepath + 'student/current', data)
 }

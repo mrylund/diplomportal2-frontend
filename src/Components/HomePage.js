@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getCurrentUser } from "../libs/requests"
+import { getTokenFromClien } from "../utils"
 
 export const HomePage = () => {
     
@@ -8,7 +9,7 @@ export const HomePage = () => {
 
     useEffect(() => {
         const fetchCurStudent = async () => {
-            const response = await getCurrentUser(window.localStorage.getItem('portal-jwt-Token'));
+            const response = await getCurrentUser();
             const curUser = response.data;
             setCurStudent(curUser)
             setLoaded(true)
@@ -26,10 +27,10 @@ export const HomePage = () => {
         // Show the name for the student
         : curStudent 
         ? 
-        <div class="p-3">
+        <div className="p-3">
             <h2>Velkommen tilbage, {curStudent.name || curStudent.studynumber}</h2>
         </div>
-        : <div class="p-3">Fejl</div> 
+        : <div className="p-3">Fejl</div> 
         
     );
     
