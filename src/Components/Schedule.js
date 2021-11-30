@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getStudent } from "../libs/requests"
 import { ScheduleContent } from "./ScheduleContent"
+import '../styles/Schedule.css'
 
 export const ScheduleComponent = (props) => {
 
@@ -42,7 +43,7 @@ export const ScheduleComponent = (props) => {
             ) : 
             (
                 <div className="schedule-box p-3">
-                    <h2 class="pb-2">Skema</h2>
+                    <h2 class="big-text-schedule pb-2 border-2">Skema</h2>
                     <div className="schedule-weekday">
                         {/* List weekdays the student has courses */}
                         { student.schedule.map((day, index) => {

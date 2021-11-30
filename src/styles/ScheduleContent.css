@@ -1,0 +1,17 @@
+
+
+.big-text {
+    color: gray !important;
+    font-size: 1em !important;
+}
+
+.course-time-and-name {
+    display: inline-block;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.a-schedule-item {
+    color: black !important;
+    text-decoration: none !important;
+}
