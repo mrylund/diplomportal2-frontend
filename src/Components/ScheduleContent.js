@@ -19,8 +19,8 @@ export const ScheduleContent = (props) => {
 const CourseTimeAndName = (props) => {
     return (
         <div style={{display:"block", textAlign:"left"}}>
-            <h5 className="course-time-and-name">{props.course.startTime + '-' +props.course.endTime + ' - '}</h5>
-            <h5 className="course-time-and-name"><a className="a-schedule-item"href={"#course/"+props.course.courseNumber}>{props.course.title}</a></h5>
+            <h5 className="course-time-and-name">{props.startTime + '-' +props.course.endTime + ' - '}</h5>
+            <h5 className="course-time-and-name"><a className="a-schedule-item"href={"/course/"+props.course.courseNumber}>{props.course.title}</a></h5>
         </div>
     )
 }

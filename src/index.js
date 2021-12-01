@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Course } from './Components/Course';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route, BrowserRouter } from 'react-router-dom';
 import { NavBar } from './Components/Navigationbar/Navbar';
 import { Login } from './Components/Navigationbar/Login';
 import { ProfilePage } from './Components/ProfilePage';
 import { AboutPage } from './Components/AboutPage';
+import { ProtectedRoute, AdminRoute } from './Components/ProtectedRoute';
 
 // Taken from https://github.com/diplomit-dtu/diplomPortal/blob/master/src/index.js
 const token = getParameterByName("token");
@@ -19,20 +20,17 @@ if (token!=null && token.length>0){
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <HashRouter>
+  <BrowserRouter>
       <NavBar/>
       <Switch>
         <Route exact path={'/'} component={App} />
         <Route path={'/course/:id'} component={Course} />
         <Route exact path={'/signin'} component={Login} />
-        <Route exact path={'/profile'} component={ProfilePage} />
+        <ProtectedRoute exact path={'/profile'} component={ProfilePage} />
         <Route exact path={'/about'} component={AboutPage} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
-
-    </HashRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
