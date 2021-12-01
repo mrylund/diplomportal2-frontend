@@ -25,7 +25,7 @@ export const CourseDropdown = (props) => {
     return (
         !!courses
         ? <NavDropdown title="Kurser">
-            {courses.map((course, index) => <NavDropdown.Item key={index} href={"#course/"+course.courseNumber}>{course.courseNumber} - {course.title}</NavDropdown.Item>)}
+            {courses.map((course, index) => <NavDropdown.Item key={index} href={"/course/"+course.courseNumber}>{course.courseNumber} - {course.title}</NavDropdown.Item>)}
         </NavDropdown>
         // Do not show if no courses fetched
         : <></>
