@@ -3,6 +3,7 @@ import { getCourse } from "../libs/requests";
 import '../styles/course.css'
 const PublicGoogleSheetsParser = require('public-google-sheets-parser')
 
+// TODO: implement real google sheet api
 export const Course = (props) => {
 
     const [data, setData] = useState([])
@@ -36,7 +37,7 @@ export const Course = (props) => {
         ? <div>Google Sheet ikke tilgængeligt.</div>
         : <div className="table-custom">
             <h2>Lektioner for {course.title} </h2>
-            <table className="table table-striped table-dark">
+            <table className="table table-striped table-light">
             <thead>
                 <tr>
                 <th scope="col">Lektion</th>
@@ -68,15 +69,22 @@ export const Course = (props) => {
 
 export const Lesson = (props) => {
     var _time = props.time ? new Date(props.time.substring(5, props.time.length-1)).toLocaleDateString('en-AU') : ''
+    var preparationText = props.preparation.includes('google.com/') ? 'Forberedelse' : 'Link'
+    var preparationIsLink = props.preparation.includes('http') ? true : false
+    var lectureText = props.lecture.includes('google.com/') ? 'Forelæsning' : 'Link'
+    var lectureIsLink = props.lecture.includes('http') ? true : false
+    var materialText = props.material.includes('google.com/') ? 'Undervisning' : 'Link'
+    var materialIsLink = props.material.includes('http') ? true : false
+
     return (
         <tr>
             <td>{props.lesson}</td>
             <td>{props.topic}</td>
             <td>{_time}</td>
             <td>{props.room}</td>
-            <td>{props.preparation}</td>
-            <td>{props.lecture}</td>
-            <td>{props.material}</td>
+            {preparationIsLink ? <td><a href={props.preparation}>{preparationText}</a></td> : <td>{props.preparation}</td>} 
+            {lectureIsLink ? <td><a href={props.lecture}>{lectureText}</a></td> : <td>{props.lecture}</td>}
+            {materialIsLink ? <td><a href={props.material}>{materialText}</a></td> : <td>{props.material}</td>}
         </tr>
     )
 }
