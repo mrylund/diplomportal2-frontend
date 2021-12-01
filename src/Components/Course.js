@@ -82,9 +82,9 @@ export const Lesson = (props) => {
             <td>{props.topic}</td>
             <td>{_time}</td>
             <td>{props.room}</td>
-            {preparationIsLink ? <td><a href={props.preparation}>{preparationText}</a></td> : <td>{props.preparation}</td>} 
-            {lectureIsLink ? <td><a href={props.lecture}>{lectureText}</a></td> : <td>{props.lecture}</td>}
-            {materialIsLink ? <td><a href={props.material}>{materialText}</a></td> : <td>{props.material}</td>}
+            {preparationIsLink ? <td><a href={props.preparation} target='_blank' rel="noreferrer">{preparationText}</a></td> : <td>{props.preparation}</td>} 
+            {lectureIsLink ? <td><a href={props.lecture} target='_blank' rel="noreferrer">{lectureText}</a></td> : <td>{props.lecture}</td>}
+            {materialIsLink ? <td><a href={props.material} target='_blank' rel="noreferrer">{materialText}</a></td> : <td>{props.material}</td>}
         </tr>
     )
 }
