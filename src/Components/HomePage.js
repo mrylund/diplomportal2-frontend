@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getCurrentUser } from "../libs/requests"
+import { isUserAuthorized } from "../utils"
 
 export const HomePage = () => {
     
@@ -7,14 +8,18 @@ export const HomePage = () => {
     const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
+        const auth = isUserAuthorized();
+
         const fetchCurStudent = async () => {
             const response = await getCurrentUser();
             const curUser = response.data;
             setCurStudent(curUser)
             setLoaded(true)
         };
+        if(auth) {
+            fetchCurStudent()
+        }
 
-        fetchCurStudent()
     }, [])
     
 

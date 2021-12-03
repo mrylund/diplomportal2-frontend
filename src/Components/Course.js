@@ -31,10 +31,10 @@ export const Course = (props) => {
     
     return (
         !loaded
-        ? <div>Loading...</div>
+        ? <div className="text-center mt-5">Loading...</div>
         : data.length === 0 
 
-        ? <div>Google Sheet ikke tilgængeligt.</div>
+        ? <div className="text-center mt-5">Google Sheet ikke tilgængelig for dette kursus.</div>
         : <div className="table-custom">
             <h2>Lektioner for {course.title} </h2>
             <table className="table table-striped table-light">

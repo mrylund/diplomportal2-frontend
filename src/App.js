@@ -26,7 +26,7 @@ const App = () => {
 
     return (
         !isAuthorized
-        ? <div>Ingen adgang</div>
+        ? <div className="text-center mt-5">Log venligst ind, for at få adgang til Diplomportal 2.0</div>
         : <div>
             <HomePage />
             <ScheduleComponent></ScheduleComponent>
