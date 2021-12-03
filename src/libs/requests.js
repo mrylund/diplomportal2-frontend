@@ -30,14 +30,14 @@ export const verifyUser = (token) => {
     const data = {
         authorization: token
     }
-    return query('post', basepath + 'student/authenticate', data)
+    return query('post', basepath + 'students/authenticate', data)
 }
 
 export const getCurrentUser = () => {    
     const data = {
         authorization: getTokenFromClient()
     }
-    return query('post', basepath + 'student/current', data)
+    return query('post', basepath + 'students/current', data)
 }
 
 export const updateCurrentUserName = (name, token) => {
