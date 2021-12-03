@@ -9,11 +9,13 @@ import { NotAdminPage, NotLoggedInPage } from './AuthException'
  */
 export const ProtectedRoute = ({component: Component, ...rest}) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
         const checkAuth = async () => {
             const loggedIn = await isUserAuthorized()
             setIsLoggedIn(loggedIn)
+            setLoading(false)
         }
         checkAuth()
     }, [])
@@ -24,6 +26,8 @@ export const ProtectedRoute = ({component: Component, ...rest}) => {
             render={(props) => {
                 if (isLoggedIn) {
                     return <Component {...props}/>
+                } else if (isLoading) {
+                        return <div>  </div>
                 } else {
                     return <NotLoggedInPage />
                 }
