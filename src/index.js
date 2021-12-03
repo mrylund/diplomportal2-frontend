@@ -20,7 +20,7 @@ if (token!=null && token.length>0){
 }
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
       <NavBar/>
       <Switch>
         <Route exact path={'/'} component={App} />
@@ -30,7 +30,7 @@ ReactDOM.render(
         <Route exact path={'/about'} component={AboutPage} />
         <Route render={() => <h1>404</h1>} />
       </Switch>
-    </BrowserRouter>,
+    </HashRouter>,
   document.getElementById('root')
 );
 
